@@ -2,7 +2,7 @@
 
 public class User
 {
-	public User(string id)
+	public User()
 	{
 
 	}
