@@ -10,7 +10,7 @@
 3. A feed containing issues submitted by users with timestamp.
 4. A status bar: Pending/Verfied.
 5. A log off button.
-#### Form2: User View
+#### Form2: Public View
 1. There should be an option to attach a picture, make it visible, and a description with the issue.
 2. They should be able to "like", "Agree" or add to the counter.
 3. Users can vote to change "pending complete" to "completed". A user can only vote once.
@@ -70,3 +70,17 @@ Each user contains:
 - A community user can vote for completion once.
 - Users cannot vote on their own issue more than once.
 - Once the required number of completion votes is reached, the issue becomes Completed.
+### 
+#### Models/
+    User.cs
+    - Public.cs
+    - Department.cs
+    Issue.cs
+    Vote.cs
+
+#### Forms/
+    LoginForm.cs
+    MainFeedForm.cs
+    CreateIssueForm.cs
+
+#### Data/
