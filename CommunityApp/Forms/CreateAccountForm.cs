@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace CommunityApp
+{
+    public partial class CreateAccountForm : Form
+    {
+        public CreateAccountForm()
+        {
+            InitializeComponent();
+        }
+
+        private void UserNameLabel2_Click(object sender, EventArgs e)
+        {
+
+            //This brings the username text label to the upper top of textbox.
+            UserNameLabel2.Top = 4;
+            UserNameLabel2.Font = new Font(UserNameLabel2.Font.FontFamily, 6, FontStyle.Bold);
+            UserNameTextBox2.Top = 20;
+            UserNameTextBox2.Focus();
+        }
+
+        private void UserNameTextBox2_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(UserNameTextBox2.Text))
+            {
+                UserNameLabel2.Top = 4;
+
+                UserNameLabel2.Font = new Font(
+                    UserNameLabel2.Font.FontFamily,
+                    14,
+                    FontStyle.Regular
+                );
+
+                UserNameTextBox2.Top = 12;
+            }
+        }
+
+        private void PasswordLabel2_Click(object sender, EventArgs e)
+        {
+            //This brings the username text label to the upper top of textbox.
+            PasswordLabel2.Top = 4;
+            PasswordLabel2.Font = new Font(UserNameLabel2.Font.FontFamily, 6, FontStyle.Bold);
+            PasswordTextbox2.Top = 20;
+            PasswordTextbox2.Focus();
+        }
+
+        private void PasswordTextbox2_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(PasswordTextbox2.Text))
+            {
+                PasswordLabel2.Top = 4;
+
+                PasswordLabel2.Font = new Font(
+                    PasswordLabel2.Font.FontFamily,
+                    14,
+                    FontStyle.Regular
+                );
+
+                PasswordTextbox2.Top = 12;
+            }
+        }
+    }
+}
