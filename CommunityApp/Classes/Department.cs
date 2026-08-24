@@ -2,7 +2,8 @@
 
 public class Department : User
 {
-	public Department()
+	public Department(int id, string name, string password) : base(id,name,password)
 	{
+
 	}
 }

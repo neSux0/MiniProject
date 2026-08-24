@@ -48,7 +48,7 @@ Each issue contains:
 - Image
 - Date/time reported
 - Severity
-- Status
+- WorkStatus
 - Number of confirmations
 - Number of completion votes
 - User who created the issue

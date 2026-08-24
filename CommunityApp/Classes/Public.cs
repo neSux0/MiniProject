@@ -2,7 +2,8 @@
 
 public class Public : User
 {
-	public Public()
+
+	public Public(int id, string name, string password) : base(id,name,password)
 	{
 
 	}
