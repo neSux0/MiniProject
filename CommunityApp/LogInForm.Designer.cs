@@ -42,73 +42,87 @@
             // 
             // LogInBtn
             // 
-            LogInBtn.Location = new Point(308, 299);
+            LogInBtn.Location = new Point(326, 308);
             LogInBtn.Name = "LogInBtn";
             LogInBtn.Size = new Size(112, 34);
             LogInBtn.TabIndex = 0;
             LogInBtn.Text = "Log In";
             LogInBtn.UseVisualStyleBackColor = true;
+            LogInBtn.Click += LogInBtn_Click;
             // 
             // UserNameLabel
             // 
             UserNameLabel.AutoSize = true;
-            UserNameLabel.Location = new Point(24, 0);
+            UserNameLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            UserNameLabel.Location = new Point(3, 3);
             UserNameLabel.Name = "UserNameLabel";
-            UserNameLabel.Size = new Size(95, 25);
+            UserNameLabel.Size = new Size(196, 38);
             UserNameLabel.TabIndex = 1;
-            UserNameLabel.Text = "Username:";
+            UserNameLabel.Text = "Username / ID";
+            UserNameLabel.Click += UserNameLabel_Click;
             // 
             // PasswordLabel
             // 
             PasswordLabel.AutoSize = true;
-            PasswordLabel.Location = new Point(27, 11);
+            PasswordLabel.Font = new Font("Segoe UI", 14F);
+            PasswordLabel.Location = new Point(3, 3);
             PasswordLabel.Name = "PasswordLabel";
-            PasswordLabel.Size = new Size(91, 25);
+            PasswordLabel.Size = new Size(132, 38);
             PasswordLabel.TabIndex = 2;
-            PasswordLabel.Text = "Password:";
+            PasswordLabel.Text = "Password";
+            PasswordLabel.Click += PasswordLabel_Click;
             // 
             // UserNameTextBox
             // 
-            UserNameTextBox.Location = new Point(13, 54);
+            UserNameTextBox.BorderStyle = BorderStyle.None;
+            UserNameTextBox.Cursor = Cursors.IBeam;
+            UserNameTextBox.Location = new Point(3, 14);
             UserNameTextBox.Name = "UserNameTextBox";
-            UserNameTextBox.Size = new Size(150, 31);
-            UserNameTextBox.TabIndex = 3;
+            UserNameTextBox.Size = new Size(276, 24);
+            UserNameTextBox.TabIndex = 2;
+            UserNameTextBox.Enter += UserNameTextBox_Enter;
             // 
             // PasswordTextbox
             // 
-            PasswordTextbox.Location = new Point(17, 70);
+            PasswordTextbox.BorderStyle = BorderStyle.None;
+            PasswordTextbox.Location = new Point(8, 20);
             PasswordTextbox.Name = "PasswordTextbox";
-            PasswordTextbox.Size = new Size(150, 31);
+            PasswordTextbox.Size = new Size(267, 24);
             PasswordTextbox.TabIndex = 4;
+            PasswordTextbox.Enter += PasswordTextbox_Enter;
             // 
             // LogInTitle
             // 
             LogInTitle.AutoSize = true;
             LogInTitle.FlatStyle = FlatStyle.Flat;
-            LogInTitle.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LogInTitle.Font = new Font("Arial Narrow", 20F, FontStyle.Bold);
             LogInTitle.ForeColor = Color.Firebrick;
-            LogInTitle.Location = new Point(181, 104);
+            LogInTitle.Location = new Point(197, 103);
             LogInTitle.Name = "LogInTitle";
-            LogInTitle.Size = new Size(363, 42);
+            LogInTitle.Size = new Size(405, 46);
             LogInTitle.TabIndex = 5;
             LogInTitle.Text = "Log Into The Community";
             // 
             // usernamepanel
             // 
+            usernamepanel.BorderStyle = BorderStyle.FixedSingle;
             usernamepanel.Controls.Add(UserNameLabel);
             usernamepanel.Controls.Add(UserNameTextBox);
-            usernamepanel.Location = new Point(599, 161);
+            usernamepanel.Cursor = Cursors.IBeam;
+            usernamepanel.Location = new Point(251, 169);
             usernamepanel.Name = "usernamepanel";
-            usernamepanel.Size = new Size(177, 107);
+            usernamepanel.Size = new Size(280, 47);
             usernamepanel.TabIndex = 6;
             // 
             // passwordpanel
             // 
+            passwordpanel.BorderStyle = BorderStyle.FixedSingle;
             passwordpanel.Controls.Add(PasswordLabel);
             passwordpanel.Controls.Add(PasswordTextbox);
-            passwordpanel.Location = new Point(450, 288);
+            passwordpanel.Cursor = Cursors.IBeam;
+            passwordpanel.Location = new Point(251, 243);
             passwordpanel.Name = "passwordpanel";
-            passwordpanel.Size = new Size(184, 123);
+            passwordpanel.Size = new Size(280, 47);
             passwordpanel.TabIndex = 7;
             // 
             // LogInForm
