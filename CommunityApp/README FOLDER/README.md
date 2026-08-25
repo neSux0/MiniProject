@@ -1,7 +1,7 @@
 # Product Requirements Document (PRD)
 
 ## Product Overview
-The current plan for this program is to create a WinForm app BASIC mock community network that allows them to quickly post community issues while giving government agencies and officials the accountalbity to fix these issues. These issues can include potholes, broken traffic lights, dead animals, clogged storm drains, damaged roads, etc. 
+The current plan for this program is to create a WinForms app BASIC mock community network that allows them to quickly post community issues while giving government agencies and officials the accountalbity to fix these issues. These issues can include potholes, broken traffic lights, dead animals, clogged storm drains, damaged roads, etc. 
 A user must post a picture, description of damage, and the location. An n numbers of users are needed to confirm the validity and the urgency of the issue before it can be sent up to the apporaipate agency. The issues with the most agreement and/or will be priortiized. 
 If the issue is fixed, the number of days will be marked down and will be marked as completed upon n users confirming. 
 
