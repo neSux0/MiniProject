@@ -4,7 +4,8 @@ using System.Text;
 
 namespace CommunityAppMiniProjectWinForms.Data
 {
-    internal class AppData
+    //make static so dont need to create an object of this class. use class directly for orgnaization.
+    internal static class AppData
     {
         //List may be needed for database later.(uses o(n) search)
         private static List<User> Users { get; } = new();
@@ -18,7 +19,5 @@ namespace CommunityAppMiniProjectWinForms.Data
             usersByUsername.Add(user.Username, user);
             usersById.Add(user.UserId, user);
         }
-
-
     }
 }
