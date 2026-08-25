@@ -3,6 +3,7 @@ using System.DirectoryServices;
 
 public class User
 {
+	private int nextUserId = 1000; //id starts at 1000
 	private int _UserId { get; set; } //will likely be randomly generated for identification.
 	private string _username { get; set; } //will prompt user to create
 	private string _password { get; set; } //will promp user to create
@@ -11,8 +12,19 @@ public class User
     bool IsDepartment { get; set; } = false; //Account Type
 	public User(int id, string username, string password)
 	{
-		_UserId = id;
+		_UserId = nextUserId++; //once assigned increment it.
 		_username = username;
 		_password = password;
 	}
+
+	//makes username readable.
+	public string Username
+	{
+		get { return _username; }
+	}
+    //makes id readable.
+    public int UserId
+    {
+        get { return _UserId; }
+    }
 }
