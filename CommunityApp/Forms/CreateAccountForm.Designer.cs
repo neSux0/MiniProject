@@ -39,6 +39,7 @@
             PasswordLabel2 = new Label();
             PasswordTextbox2 = new TextBox();
             SignUpBtn = new Button();
+            IsGov = new CheckBox();
             UsernamePanel2.SuspendLayout();
             PasswordPanel2.SuspendLayout();
             SuspendLayout();
@@ -150,12 +151,23 @@
             // 
             // SignUpBtn
             // 
-            SignUpBtn.Location = new Point(609, 220);
+            SignUpBtn.Location = new Point(346, 368);
             SignUpBtn.Name = "SignUpBtn";
             SignUpBtn.Size = new Size(112, 34);
             SignUpBtn.TabIndex = 9;
             SignUpBtn.Text = "Submit";
             SignUpBtn.UseVisualStyleBackColor = true;
+            SignUpBtn.Click += SignUpBtn_Click;
+            // 
+            // IsGov
+            // 
+            IsGov.AutoSize = true;
+            IsGov.Location = new Point(192, 313);
+            IsGov.Name = "IsGov";
+            IsGov.Size = new Size(467, 29);
+            IsGov.TabIndex = 10;
+            IsGov.Text = "Check the box if you are a state department employee";
+            IsGov.UseVisualStyleBackColor = true;
             // 
             // CreateAccountForm
             // 
@@ -163,6 +175,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(IsGov);
             Controls.Add(SignUpBtn);
             Controls.Add(PasswordPanel2);
             Controls.Add(UsernamePanel2);
@@ -193,5 +206,6 @@
         private Label PasswordLabel2;
         private TextBox PasswordTextbox2;
         private Button SignUpBtn;
+        private CheckBox IsGov;
     }
 }

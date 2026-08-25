@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CommunityAppMiniProjectWinForms.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Text;
@@ -63,6 +65,22 @@ namespace CommunityApp
                 );
 
                 PasswordTextbox2.Top = 12;
+            }
+        }
+
+        private void SignUpBtn_Click(object sender, EventArgs e)
+        {
+            string username = UserNameTextBox2.Text;
+            string password = PasswordTextbox2.Text;
+
+            if (IsGov.Checked)
+            {
+                AppData.AddUser(new DepartmentUser(username, password));
+            }
+            else
+            {
+                AppData.AddUser(new PublicUser(username, password));
+
             }
         }
     }
