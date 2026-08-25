@@ -72,15 +72,34 @@ namespace CommunityApp
         {
             string username = UserNameTextBox2.Text;
             string password = PasswordTextbox2.Text;
-
-            if (IsGov.Checked)
+            ///EDGE CASES for user creation.
+            if(username == "")
             {
-                AppData.AddUser(new DepartmentUser(username, password));
+                MessageBox.Show("Username cannot be empty.");
+                return;
+            }
+            if(password.Length < 8)
+            {
+                MessageBox.Show("Password must be greater have 8 charachters or more.");
+                return;
+            }
+            if (AppData.ContainsUser(username))
+            {
+                MessageBox.Show("Username already exists. Please choose another one.");
+                return;
             }
             else
             {
-                AppData.AddUser(new PublicUser(username, password));
+                if (IsGov.Checked)
+                {
+                    AppData.AddUser(new DepartmentUser(username, password));
+                }
+                else
+                {
+                    AppData.AddUser(new PublicUser(username, password));
 
+                }
+                MessageBox.Show($"Your account \"{username}\" has been created. Please log in.");
             }
         }
     }

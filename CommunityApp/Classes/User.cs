@@ -3,7 +3,7 @@ using System.DirectoryServices;
 
 public class User
 {
-	private int nextUserId = 1000; //id starts at 1000
+	private static int nextUserId = 1000; //id starts at 1000
 	private int _UserId; //will likely be randomly generated for identification.
 	private string _username { get; set; } //will prompt user to create
 	private string _password { get; set; } //will promp user to create

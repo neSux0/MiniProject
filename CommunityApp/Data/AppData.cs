@@ -19,5 +19,10 @@ namespace CommunityAppMiniProjectWinForms.Data
             usersByUsername.Add(user.Username, user);
             usersById.Add(user.UserId, user);
         }
+        public static bool ContainsUser(string username)
+        {
+            if (usersByUsername.ContainsKey(username)) return true;
+            return false;
+        }
     }
 }
