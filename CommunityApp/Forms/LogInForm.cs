@@ -8,6 +8,7 @@ namespace CommunityApp
         public LogInForm()
         {
             InitializeComponent();
+
         }
 
         private void UserNameTextBox_Leave(object sender, EventArgs e)

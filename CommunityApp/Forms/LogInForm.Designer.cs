@@ -92,6 +92,7 @@
             PasswordTextbox.Name = "PasswordTextbox";
             PasswordTextbox.Size = new Size(272, 24);
             PasswordTextbox.TabIndex = 4;
+            PasswordTextbox.UseSystemPasswordChar = true;
             PasswordTextbox.Leave += PasswordTextbox_Leave;
             // 
             // LogInTitle

@@ -26,6 +26,10 @@ namespace CommunityAppMiniProjectWinForms.Forms
                 IssuePost post = new IssuePost(issue);
                 FeedPanel.Controls.Add(post);
             }
+            foreach (Control control in FeedPanel.Controls)
+            {
+                control.Width = FeedPanel.ClientSize.Width;
+            }
         }
 
         private void AddIssueBtn_Click(object sender, EventArgs e)

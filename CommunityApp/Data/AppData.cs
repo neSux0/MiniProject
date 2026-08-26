@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 using CommunityAppMiniProjectWinForms.Classes;
@@ -16,7 +17,6 @@ namespace CommunityAppMiniProjectWinForms.Data
         private static Dictionary<int, User> usersById = new();
         //contains all the issues in a list. 
         private static List<Issue> Issues { get; } = new(); 
-
 
         public static void AddIssue(Issue issue)
         {

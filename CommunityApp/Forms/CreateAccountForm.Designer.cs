@@ -147,6 +147,7 @@
             PasswordTextbox2.Name = "PasswordTextbox2";
             PasswordTextbox2.Size = new Size(272, 24);
             PasswordTextbox2.TabIndex = 4;
+            PasswordTextbox2.UseSystemPasswordChar = true;
             PasswordTextbox2.Leave += PasswordTextbox2_Leave;
             // 
             // SignUpBtn
