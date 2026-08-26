@@ -1,5 +1,6 @@
 using CommunityAppMiniProjectWinForms.Data;
 using CommunityAppMiniProjectWinForms.Forms;
+using System.Data;
 
 namespace CommunityApp
 {
@@ -52,7 +53,10 @@ namespace CommunityApp
                 this.Hide(); // the log in form must be hidden first otherwise it would cloes the entire program.
                 MainFeed mainfeed = new();
                 mainfeed.ShowDialog();
-                this.Close();
+                //upon mainfeed exiting, log in page reappears with textfield cleared.
+                UserNameTextBox.Clear();
+                PasswordTextbox.Clear();
+                this.Show();
 
             }
             else

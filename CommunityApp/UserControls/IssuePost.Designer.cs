@@ -52,30 +52,33 @@
             // DescriptionLabel
             // 
             DescriptionLabel.AutoSize = true;
+            DescriptionLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             DescriptionLabel.ForeColor = Color.Firebrick;
             DescriptionLabel.Location = new Point(124, 303);
             DescriptionLabel.Name = "DescriptionLabel";
-            DescriptionLabel.Size = new Size(106, 25);
+            DescriptionLabel.Size = new Size(114, 25);
             DescriptionLabel.TabIndex = 1;
             DescriptionLabel.Text = "Description:";
             // 
             // LocationLabel
             // 
             LocationLabel.AutoSize = true;
+            LocationLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             LocationLabel.ForeColor = Color.Firebrick;
             LocationLabel.Location = new Point(147, 348);
             LocationLabel.Name = "LocationLabel";
-            LocationLabel.Size = new Size(83, 25);
+            LocationLabel.Size = new Size(90, 25);
             LocationLabel.TabIndex = 2;
             LocationLabel.Text = "Location:";
             // 
             // StatusLabel
             // 
             StatusLabel.AutoSize = true;
+            StatusLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             StatusLabel.ForeColor = Color.Firebrick;
             StatusLabel.Location = new Point(166, 255);
             StatusLabel.Name = "StatusLabel";
-            StatusLabel.Size = new Size(64, 25);
+            StatusLabel.Size = new Size(70, 25);
             StatusLabel.TabIndex = 3;
             StatusLabel.Text = "Status:";
             // 
@@ -84,6 +87,7 @@
             AgreeBtn.BackColor = SystemColors.Window;
             AgreeBtn.FlatAppearance.BorderSize = 0;
             AgreeBtn.FlatStyle = FlatStyle.Flat;
+            AgreeBtn.Font = new Font("Segoe UI", 9F);
             AgreeBtn.ForeColor = SystemColors.ActiveCaptionText;
             AgreeBtn.Location = new Point(73, 250);
             AgreeBtn.Name = "AgreeBtn";
@@ -142,6 +146,7 @@
             Controls.Add(LocationLabel);
             Controls.Add(DescriptionLabel);
             Controls.Add(PictureBox1);
+            Font = new Font("Segoe UI", 9F);
             Name = "IssuePost";
             Size = new Size(625, 425);
             ((System.ComponentModel.ISupportInitialize)PictureBox1).EndInit();

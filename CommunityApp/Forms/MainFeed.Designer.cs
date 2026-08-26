@@ -31,6 +31,7 @@
             FeedPanel = new FlowLayoutPanel();
             MainFeedTitleLabel = new Label();
             AddIssueBtn = new Button();
+            LogOffBtn = new Button();
             SuspendLayout();
             // 
             // FeedPanel
@@ -64,11 +65,22 @@
             AddIssueBtn.UseVisualStyleBackColor = true;
             AddIssueBtn.Click += AddIssueBtn_Click;
             // 
+            // LogOffBtn
+            // 
+            LogOffBtn.Location = new Point(633, 17);
+            LogOffBtn.Name = "LogOffBtn";
+            LogOffBtn.Size = new Size(112, 34);
+            LogOffBtn.TabIndex = 4;
+            LogOffBtn.Text = "Log Off";
+            LogOffBtn.UseVisualStyleBackColor = true;
+            LogOffBtn.Click += LogOffBtn_Click;
+            // 
             // MainFeed
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(LogOffBtn);
             Controls.Add(AddIssueBtn);
             Controls.Add(MainFeedTitleLabel);
             Controls.Add(FeedPanel);
@@ -82,5 +94,6 @@
         private FlowLayoutPanel FeedPanel;
         private Label MainFeedTitleLabel;
         private Button AddIssueBtn;
+        private Button LogOffBtn;
     }
 }

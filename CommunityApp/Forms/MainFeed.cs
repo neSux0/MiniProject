@@ -26,6 +26,7 @@ namespace CommunityAppMiniProjectWinForms.Forms
                 IssuePost post = new IssuePost(issue);
                 FeedPanel.Controls.Add(post);
             }
+            //make each controls in the feedpanel the same length.
             foreach (Control control in FeedPanel.Controls)
             {
                 control.Width = FeedPanel.ClientSize.Width;
@@ -39,6 +40,11 @@ namespace CommunityAppMiniProjectWinForms.Forms
             createForm.ShowDialog();
 
             LoadIssues(); //once the create form closes, it reloads the issues.
+        }
+
+        private void LogOffBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
