@@ -12,6 +12,9 @@ namespace CommunityAppMiniProjectWinForms.Data
         //allows O(1) search for conosle app. Search by id and username.
         private static Dictionary<string, User> usersByUsername = new();
         private static Dictionary<int, User> usersById = new();
+        //contains all the issues in a list. 
+        private static List<Issues> Issues { get; } = new(); 
+
 
         public static void AddUser(User user)
         {

@@ -88,7 +88,7 @@
             // PasswordTextbox
             // 
             PasswordTextbox.BorderStyle = BorderStyle.None;
-            PasswordTextbox.Location = new Point(3, 20);
+            PasswordTextbox.Location = new Point(-1, 22);
             PasswordTextbox.Name = "PasswordTextbox";
             PasswordTextbox.Size = new Size(272, 24);
             PasswordTextbox.TabIndex = 4;
