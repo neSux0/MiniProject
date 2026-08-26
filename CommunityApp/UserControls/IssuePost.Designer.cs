@@ -37,6 +37,8 @@
             VoteCountDisplay = new Label();
             DescriptionDisplay = new Label();
             LocationDisplay = new Label();
+            CreateIssuetimeLabel = new Label();
+            CreateIssueTimeDisplay = new Label();
             ((System.ComponentModel.ISupportInitialize)PictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             DescriptionLabel.AutoSize = true;
             DescriptionLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             DescriptionLabel.ForeColor = Color.Firebrick;
-            DescriptionLabel.Location = new Point(124, 303);
+            DescriptionLabel.Location = new Point(9, 290);
             DescriptionLabel.Name = "DescriptionLabel";
             DescriptionLabel.Size = new Size(114, 25);
             DescriptionLabel.TabIndex = 1;
@@ -65,7 +67,7 @@
             LocationLabel.AutoSize = true;
             LocationLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             LocationLabel.ForeColor = Color.Firebrick;
-            LocationLabel.Location = new Point(147, 348);
+            LocationLabel.Location = new Point(33, 326);
             LocationLabel.Name = "LocationLabel";
             LocationLabel.Size = new Size(90, 25);
             LocationLabel.TabIndex = 2;
@@ -76,7 +78,7 @@
             StatusLabel.AutoSize = true;
             StatusLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             StatusLabel.ForeColor = Color.Firebrick;
-            StatusLabel.Location = new Point(166, 255);
+            StatusLabel.Location = new Point(53, 255);
             StatusLabel.Name = "StatusLabel";
             StatusLabel.Size = new Size(70, 25);
             StatusLabel.TabIndex = 3;
@@ -89,7 +91,7 @@
             AgreeBtn.FlatStyle = FlatStyle.Flat;
             AgreeBtn.Font = new Font("Segoe UI", 9F);
             AgreeBtn.ForeColor = SystemColors.ActiveCaptionText;
-            AgreeBtn.Location = new Point(73, 250);
+            AgreeBtn.Location = new Point(9, 64);
             AgreeBtn.Name = "AgreeBtn";
             AgreeBtn.Size = new Size(30, 34);
             AgreeBtn.TabIndex = 6;
@@ -99,7 +101,7 @@
             // StatusDisplay
             // 
             StatusDisplay.AutoSize = true;
-            StatusDisplay.Location = new Point(249, 255);
+            StatusDisplay.Location = new Point(129, 255);
             StatusDisplay.Name = "StatusDisplay";
             StatusDisplay.Size = new Size(19, 25);
             StatusDisplay.TabIndex = 11;
@@ -108,7 +110,7 @@
             // VoteCountDisplay
             // 
             VoteCountDisplay.AutoSize = true;
-            VoteCountDisplay.Location = new Point(99, 255);
+            VoteCountDisplay.Location = new Point(33, 69);
             VoteCountDisplay.Name = "VoteCountDisplay";
             VoteCountDisplay.Size = new Size(22, 25);
             VoteCountDisplay.TabIndex = 12;
@@ -117,7 +119,7 @@
             // DescriptionDisplay
             // 
             DescriptionDisplay.AutoSize = true;
-            DescriptionDisplay.Location = new Point(249, 304);
+            DescriptionDisplay.Location = new Point(129, 290);
             DescriptionDisplay.Name = "DescriptionDisplay";
             DescriptionDisplay.Size = new Size(19, 25);
             DescriptionDisplay.TabIndex = 13;
@@ -126,17 +128,39 @@
             // LocationDisplay
             // 
             LocationDisplay.AutoSize = true;
-            LocationDisplay.Location = new Point(249, 348);
+            LocationDisplay.Location = new Point(129, 326);
             LocationDisplay.Name = "LocationDisplay";
             LocationDisplay.Size = new Size(19, 25);
             LocationDisplay.TabIndex = 14;
             LocationDisplay.Text = "-";
+            // 
+            // CreateIssuetimeLabel
+            // 
+            CreateIssuetimeLabel.AutoSize = true;
+            CreateIssuetimeLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            CreateIssuetimeLabel.ForeColor = Color.Firebrick;
+            CreateIssuetimeLabel.Location = new Point(3, 360);
+            CreateIssuetimeLabel.Name = "CreateIssuetimeLabel";
+            CreateIssuetimeLabel.Size = new Size(121, 25);
+            CreateIssuetimeLabel.TabIndex = 15;
+            CreateIssuetimeLabel.Text = "Time Posted:";
+            // 
+            // CreateIssueTimeDisplay
+            // 
+            CreateIssueTimeDisplay.AutoSize = true;
+            CreateIssueTimeDisplay.Location = new Point(130, 360);
+            CreateIssueTimeDisplay.Name = "CreateIssueTimeDisplay";
+            CreateIssueTimeDisplay.Size = new Size(19, 25);
+            CreateIssueTimeDisplay.TabIndex = 16;
+            CreateIssueTimeDisplay.Text = "-";
             // 
             // IssuePost
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
+            Controls.Add(CreateIssueTimeDisplay);
+            Controls.Add(CreateIssuetimeLabel);
             Controls.Add(LocationDisplay);
             Controls.Add(DescriptionDisplay);
             Controls.Add(VoteCountDisplay);
@@ -166,5 +190,7 @@
         private Label VoteCountDisplay;
         private Label DescriptionDisplay;
         private Label LocationDisplay;
+        private Label CreateIssuetimeLabel;
+        private Label CreateIssueTimeDisplay;
     }
 }

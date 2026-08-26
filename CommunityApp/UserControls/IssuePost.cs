@@ -15,10 +15,11 @@ namespace CommunityAppMiniProjectWinForms.Forms
         {
             InitializeComponent();
 
-            //assigns the data from the CURRENT issue to 1 post.
+            //assigns the data from the CURRENT issue to a control post.
             DescriptionDisplay.Text = issue.Description;
             LocationDisplay.Text = issue.Location;
             StatusDisplay.Text = issue.WorkStatus.ToString();
+            CreateIssueTimeDisplay.Text = issue.CreatedAt.ToString();
             PictureBox1.Image = issue.GetImage;
         }
 

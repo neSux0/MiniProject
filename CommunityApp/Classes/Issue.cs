@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityAppMiniProjectWinForms.Data;
+using System;
 namespace CommunityAppMiniProjectWinForms.Classes;
 public class Issue
 {
@@ -26,6 +27,7 @@ public class Issue
 		_NumofCompleteVotes = 0;
 		_CreatedAt = DateTime.Now;
 		_IssueID = _IssueID++;
+		
     }
 
 	//====================ACCESSORS========================
@@ -48,7 +50,7 @@ public class Issue
 		get { return _NumofConfirmVotes; }
 	}
 
-	public DateTime CreatdAt
+	public DateTime CreatedAt
 	{
 		get {return _CreatedAt; }
 	}
