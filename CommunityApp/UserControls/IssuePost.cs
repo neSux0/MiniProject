@@ -15,6 +15,7 @@ namespace CommunityAppMiniProjectWinForms.Forms
         {
             InitializeComponent();
 
+            //assigns the data from the CURRENT issue to 1 post.
             DescriptionDisplay.Text = issue.Description;
             LocationDisplay.Text = issue.Location;
             StatusDisplay.Text = issue.WorkStatus.ToString();

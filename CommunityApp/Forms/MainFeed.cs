@@ -20,7 +20,7 @@ namespace CommunityAppMiniProjectWinForms.Forms
 
         private void LoadIssues()
         {
-
+            FeedPanel.Controls.Clear(); //this needs to be added to prevent duplicates posting.
             foreach (Issue issue in AppData.IssuesList)
             {
                 IssuePost post = new IssuePost(issue);

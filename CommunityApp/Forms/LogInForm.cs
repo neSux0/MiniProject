@@ -48,8 +48,10 @@ namespace CommunityApp
             if(ValidateLogIn(UserNameTextBox.Text, PasswordTextbox.Text))
             {
                 MessageBox.Show("Logging in...");
+                this.Hide(); // the log in form must be hidden first otherwise it would cloes the entire program.
                 MainFeed mainfeed = new();
                 mainfeed.ShowDialog();
+                this.Close();
 
             }
             else
