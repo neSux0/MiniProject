@@ -28,26 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            PictureBox1 = new PictureBox();
             DescriptionLabel = new Label();
             LocationLabel = new Label();
             StatusLabel = new Label();
-            openFileDialog1 = new OpenFileDialog();
             AgreeBtn = new Button();
             StatusDisplay = new Label();
             VoteCountDisplay = new Label();
             DescriptionDisplay = new Label();
             LocationDisplay = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // PictureBox1
             // 
-            pictureBox1.Location = new Point(73, 32);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(479, 205);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            PictureBox1.Location = new Point(73, 32);
+            PictureBox1.Name = "PictureBox1";
+            PictureBox1.Size = new Size(479, 205);
+            PictureBox1.TabIndex = 0;
+            PictureBox1.TabStop = false;
             // 
             // DescriptionLabel
             // 
@@ -78,10 +77,6 @@
             StatusLabel.Size = new Size(64, 25);
             StatusLabel.TabIndex = 3;
             StatusLabel.Text = "Status:";
-            // 
-            // openFileDialog1
-            // 
-            openFileDialog1.FileName = "openFileDialog1";
             // 
             // AgreeBtn
             // 
@@ -145,21 +140,20 @@
             Controls.Add(StatusLabel);
             Controls.Add(LocationLabel);
             Controls.Add(DescriptionLabel);
-            Controls.Add(pictureBox1);
+            Controls.Add(PictureBox1);
             Name = "IssuePost";
             Size = new Size(625, 425);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox PictureBox1;
         private Label DescriptionLabel;
         private Label LocationLabel;
         private Label StatusLabel;
-        private OpenFileDialog openFileDialog1;
         private Button AgreeBtn;
         private RichTextBox richTextBox1;
         private Label StatusDisplay;

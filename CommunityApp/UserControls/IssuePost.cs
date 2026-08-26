@@ -11,7 +11,6 @@ namespace CommunityAppMiniProjectWinForms.Forms
 {
     public partial class IssuePost : UserControl
     {
-        private Issue issue;
         public IssuePost(Issue issue)
         {
             InitializeComponent();
@@ -19,6 +18,7 @@ namespace CommunityAppMiniProjectWinForms.Forms
             DescriptionLabel.Text = issue.Description;
             LocationLabel.Text = issue.Location;
             StatusLabel.Text = issue.WorkStatus.ToString();
+            PictureBox1.Image = issue.GetImage;
         }
 
     }

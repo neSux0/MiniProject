@@ -20,13 +20,21 @@ namespace CommunityAppMiniProjectWinForms.Forms
 
         private void LoadIssues()
         {
+
             foreach (Issue issue in AppData.IssuesList)
             {
                 IssuePost post = new IssuePost(issue);
-
                 FeedPanel.Controls.Add(post);
             }
         }
 
+        private void AddIssueBtn_Click(object sender, EventArgs e)
+        {
+            CreateIssueForm createForm = new CreateIssueForm();
+
+            createForm.ShowDialog();
+
+            LoadIssues(); //once the create form closes, it reloads the issues.
+        }
     }
 }

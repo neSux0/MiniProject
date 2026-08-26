@@ -18,6 +18,10 @@ namespace CommunityAppMiniProjectWinForms.Data
         private static List<Issue> Issues { get; } = new(); 
 
 
+        public static void AddIssue(Issue issue)
+        {
+            Issues.Add(issue);
+        }
         public static void AddUser(User user)
         {
             Users.Add(user);

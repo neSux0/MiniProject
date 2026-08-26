@@ -125,6 +125,7 @@
             CreateIssueCloseBtn.TabIndex = 11;
             CreateIssueCloseBtn.Text = "Exit";
             CreateIssueCloseBtn.UseVisualStyleBackColor = true;
+            CreateIssueCloseBtn.Click += CreateIssueCloseBtn_Click;
             // 
             // CreateIssueClearImageBtn
             // 
@@ -134,15 +135,18 @@
             CreateIssueClearImageBtn.TabIndex = 12;
             CreateIssueClearImageBtn.Text = "X";
             CreateIssueClearImageBtn.UseVisualStyleBackColor = true;
+            CreateIssueClearImageBtn.Click += CreateIssueClearImageBtn_Click;
             // 
             // CreateIssueUploadBtn
             // 
-            CreateIssueUploadBtn.Location = new Point(141, 364);
+            CreateIssueUploadBtn.Font = new Font("Segoe UI", 7F);
+            CreateIssueUploadBtn.Location = new Point(151, 370);
             CreateIssueUploadBtn.Name = "CreateIssueUploadBtn";
-            CreateIssueUploadBtn.Size = new Size(80, 34);
+            CreateIssueUploadBtn.Size = new Size(61, 25);
             CreateIssueUploadBtn.TabIndex = 13;
             CreateIssueUploadBtn.Text = "Upload";
             CreateIssueUploadBtn.UseVisualStyleBackColor = true;
+            CreateIssueUploadBtn.Click += CreateIssueUploadBtn_Click;
             // 
             // CreateIssueForm
             // 

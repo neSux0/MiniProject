@@ -151,7 +151,7 @@
             // 
             // SignUpBtn
             // 
-            SignUpBtn.Location = new Point(346, 368);
+            SignUpBtn.Location = new Point(328, 369);
             SignUpBtn.Name = "SignUpBtn";
             SignUpBtn.Size = new Size(112, 34);
             SignUpBtn.TabIndex = 9;
@@ -162,7 +162,7 @@
             // IsGov
             // 
             IsGov.AutoSize = true;
-            IsGov.Location = new Point(192, 313);
+            IsGov.Location = new Point(158, 312);
             IsGov.Name = "IsGov";
             IsGov.Size = new Size(467, 29);
             IsGov.TabIndex = 10;

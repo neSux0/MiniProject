@@ -99,6 +99,7 @@ namespace CommunityApp
                     AppData.AddUser(new PublicUser(username, password));
 
                 }
+                this.Close();
                 MessageBox.Show($"Your account \"{username}\" has been created. Please log in.");
             }
         }

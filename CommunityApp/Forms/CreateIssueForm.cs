@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommunityAppMiniProjectWinForms.Classes;
+using CommunityAppMiniProjectWinForms.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +16,45 @@ namespace CommunityAppMiniProjectWinForms.Forms
         {
             InitializeComponent();
         }
-
+        private Image? selectedImage; //this will store the image.
         private void CreateIssuePostBtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(IssueDescriptionTextbox.Text) ||
+        string.IsNullOrWhiteSpace(CreateIssueLocationTextbox.Text))
+            {
+                MessageBox.Show("Please fill out description and location.");
+                return;
+            }
+            else
+            {
+                Issue NewIssue = new Issue(IssueDescriptionTextbox.Text, CreateIssueLocationTextbox.Text, selectedImage);
+                AppData.AddIssue(NewIssue);
+                MessageBox.Show("Issue has been posted.");
+            }
+        }
+
+        private void CreateIssueCloseBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CreateIssueUploadBtn_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                selectedImage = Image.FromFile(openFileDialog1.FileName);
+                pictureBox1.Image = selectedImage; //this lets you preview the image.
+                CreateIssueUploadBtn.Hide();// hides the button so it doesnt block the preview image.
+            }
+        }
+
+        private void CreateIssueClearImageBtn_Click(object sender, EventArgs e)
+        {
+            selectedImage = null;
+            pictureBox1.Image = null;
+            CreateIssueUploadBtn.Show();// Shows the upload button again after removing the image.
 
         }
     }

@@ -62,6 +62,7 @@
             AddIssueBtn.TabIndex = 3;
             AddIssueBtn.Text = "Add";
             AddIssueBtn.UseVisualStyleBackColor = true;
+            AddIssueBtn.Click += AddIssueBtn_Click;
             // 
             // MainFeed
             // 
