@@ -15,7 +15,7 @@ namespace CommunityAppMiniProjectWinForms.Data
         private static Dictionary<string, User> usersByUsername = new();
         private static Dictionary<int, User> usersById = new();
         //contains all the issues in a list. 
-        private static List<Issues> Issues { get; } = new(); 
+        private static List<Issue> Issues { get; } = new(); 
 
 
         public static void AddUser(User user)
@@ -28,6 +28,13 @@ namespace CommunityAppMiniProjectWinForms.Data
         {
             if (usersByUsername.ContainsKey(username)) return true;
             return false;
+        }
+
+
+        //=======ACCESSORS================
+        public static List<Issue> IssuesList
+        {
+            get { return Issues; }
         }
     }
 }

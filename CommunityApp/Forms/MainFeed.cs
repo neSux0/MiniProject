@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommunityAppMiniProjectWinForms.Classes;
+using CommunityAppMiniProjectWinForms.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,18 @@ namespace CommunityAppMiniProjectWinForms.Forms
         public MainFeed()
         {
             InitializeComponent();
+            LoadIssues();
         }
+
+        private void LoadIssues()
+        {
+            foreach (Issue issue in AppData.IssuesList)
+            {
+                IssuePost post = new IssuePost(issue);
+
+                FeedPanel.Controls.Add(post);
+            }
+        }
+
     }
 }

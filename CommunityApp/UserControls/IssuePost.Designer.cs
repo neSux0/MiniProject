@@ -32,25 +32,28 @@
             DescriptionLabel = new Label();
             LocationLabel = new Label();
             StatusLabel = new Label();
-            ConfirmLabel = new Label();
             openFileDialog1 = new OpenFileDialog();
-            UploadBtn = new Button();
             AgreeBtn = new Button();
+            StatusDisplay = new Label();
+            VoteCountDisplay = new Label();
+            DescriptionDisplay = new Label();
+            LocationDisplay = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(106, 44);
+            pictureBox1.Location = new Point(73, 32);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(386, 157);
+            pictureBox1.Size = new Size(479, 205);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // DescriptionLabel
             // 
             DescriptionLabel.AutoSize = true;
-            DescriptionLabel.Location = new Point(33, 246);
+            DescriptionLabel.ForeColor = Color.Firebrick;
+            DescriptionLabel.Location = new Point(124, 303);
             DescriptionLabel.Name = "DescriptionLabel";
             DescriptionLabel.Size = new Size(106, 25);
             DescriptionLabel.TabIndex = 1;
@@ -59,7 +62,8 @@
             // LocationLabel
             // 
             LocationLabel.AutoSize = true;
-            LocationLabel.Location = new Point(56, 283);
+            LocationLabel.ForeColor = Color.Firebrick;
+            LocationLabel.Location = new Point(147, 348);
             LocationLabel.Name = "LocationLabel";
             LocationLabel.Size = new Size(83, 25);
             LocationLabel.TabIndex = 2;
@@ -68,52 +72,76 @@
             // StatusLabel
             // 
             StatusLabel.AutoSize = true;
-            StatusLabel.Location = new Point(73, 322);
+            StatusLabel.ForeColor = Color.Firebrick;
+            StatusLabel.Location = new Point(166, 255);
             StatusLabel.Name = "StatusLabel";
             StatusLabel.Size = new Size(64, 25);
             StatusLabel.TabIndex = 3;
             StatusLabel.Text = "Status:";
             // 
-            // ConfirmLabel
-            // 
-            ConfirmLabel.AutoSize = true;
-            ConfirmLabel.Location = new Point(6, 362);
-            ConfirmLabel.Name = "ConfirmLabel";
-            ConfirmLabel.Size = new Size(133, 25);
-            ConfirmLabel.TabIndex = 4;
-            ConfirmLabel.Text = "Confirm Count:";
-            // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // UploadBtn
-            // 
-            UploadBtn.BackColor = SystemColors.Window;
-            UploadBtn.Location = new Point(136, 209);
-            UploadBtn.Name = "UploadBtn";
-            UploadBtn.Size = new Size(161, 34);
-            UploadBtn.TabIndex = 5;
-            UploadBtn.Text = "Upload Image";
-            UploadBtn.UseVisualStyleBackColor = false;
-            // 
             // AgreeBtn
             // 
             AgreeBtn.BackColor = SystemColors.Window;
-            AgreeBtn.Location = new Point(330, 209);
+            AgreeBtn.FlatAppearance.BorderSize = 0;
+            AgreeBtn.FlatStyle = FlatStyle.Flat;
+            AgreeBtn.ForeColor = SystemColors.ActiveCaptionText;
+            AgreeBtn.Location = new Point(73, 250);
             AgreeBtn.Name = "AgreeBtn";
-            AgreeBtn.Size = new Size(112, 34);
+            AgreeBtn.Size = new Size(30, 34);
             AgreeBtn.TabIndex = 6;
-            AgreeBtn.Text = "Confirm";
+            AgreeBtn.Text = "👍";
             AgreeBtn.UseVisualStyleBackColor = false;
+            // 
+            // StatusDisplay
+            // 
+            StatusDisplay.AutoSize = true;
+            StatusDisplay.Location = new Point(249, 255);
+            StatusDisplay.Name = "StatusDisplay";
+            StatusDisplay.Size = new Size(19, 25);
+            StatusDisplay.TabIndex = 11;
+            StatusDisplay.Text = "-";
+            // 
+            // VoteCountDisplay
+            // 
+            VoteCountDisplay.AutoSize = true;
+            VoteCountDisplay.Location = new Point(99, 255);
+            VoteCountDisplay.Name = "VoteCountDisplay";
+            VoteCountDisplay.Size = new Size(22, 25);
+            VoteCountDisplay.TabIndex = 12;
+            VoteCountDisplay.Text = "0";
+            // 
+            // DescriptionDisplay
+            // 
+            DescriptionDisplay.AutoSize = true;
+            DescriptionDisplay.Location = new Point(249, 304);
+            DescriptionDisplay.Name = "DescriptionDisplay";
+            DescriptionDisplay.Size = new Size(19, 25);
+            DescriptionDisplay.TabIndex = 13;
+            DescriptionDisplay.Text = "-";
+            // 
+            // LocationDisplay
+            // 
+            LocationDisplay.AutoSize = true;
+            LocationDisplay.Location = new Point(249, 348);
+            LocationDisplay.Name = "LocationDisplay";
+            LocationDisplay.Size = new Size(19, 25);
+            LocationDisplay.TabIndex = 14;
+            LocationDisplay.Text = "-";
             // 
             // IssuePost
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
+            Controls.Add(LocationDisplay);
+            Controls.Add(DescriptionDisplay);
+            Controls.Add(VoteCountDisplay);
+            Controls.Add(StatusDisplay);
             Controls.Add(AgreeBtn);
-            Controls.Add(UploadBtn);
-            Controls.Add(ConfirmLabel);
             Controls.Add(StatusLabel);
             Controls.Add(LocationLabel);
             Controls.Add(DescriptionLabel);
@@ -131,9 +159,12 @@
         private Label DescriptionLabel;
         private Label LocationLabel;
         private Label StatusLabel;
-        private Label ConfirmLabel;
         private OpenFileDialog openFileDialog1;
-        private Button UploadBtn;
         private Button AgreeBtn;
+        private RichTextBox richTextBox1;
+        private Label StatusDisplay;
+        private Label VoteCountDisplay;
+        private Label DescriptionDisplay;
+        private Label LocationDisplay;
     }
 }

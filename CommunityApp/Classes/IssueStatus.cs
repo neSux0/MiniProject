@@ -6,7 +6,7 @@ namespace CommunityAppMiniProjectWinForms.Classes
 {
     public enum IssueStatus
     {
-        Pending,
+        Submitted,
         Verified,
         InProgress,
         Completed
