@@ -27,4 +27,9 @@ public class User
     {
         get { return _UserId; }
     }
+
+	public string Password
+	{
+		get { return _password; }
+	}
 }

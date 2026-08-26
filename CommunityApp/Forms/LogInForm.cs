@@ -1,3 +1,6 @@
+using CommunityAppMiniProjectWinForms.Data;
+using CommunityAppMiniProjectWinForms.Forms;
+
 namespace CommunityApp
 {
     public partial class LogInForm : Form
@@ -35,6 +38,25 @@ namespace CommunityApp
 
         private void LogInBtn_Click(object sender, EventArgs e)
         {
+            //validate user log in input.
+            if(string.IsNullOrWhiteSpace(UserNameTextBox.Text) || string.IsNullOrEmpty(PasswordTextbox.Text))
+            {
+                MessageBox.Show("Please enter your username and password.");
+                return;
+            }
+
+            if(ValidateLogIn(UserNameTextBox.Text, PasswordTextbox.Text))
+            {
+                MessageBox.Show("Logging in...");
+                MainFeed mainfeed = new();
+                mainfeed.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Your username or password is incorrect.");
+                return;
+            }
 
         }
         private void createBtn_Click(object sender, EventArgs e)
@@ -70,10 +92,11 @@ namespace CommunityApp
         }
 
 
+        //===============HELPER METHODS===================================//
 
-
-
-
-        //=============HELPER METHOD==================================//
+        public bool ValidateLogIn(string user, string pass)
+        {
+            return (AppData.VerifyUser(user, pass));
+        }
     }
 }

@@ -15,9 +15,9 @@ namespace CommunityAppMiniProjectWinForms.Forms
         {
             InitializeComponent();
 
-            DescriptionLabel.Text = issue.Description;
-            LocationLabel.Text = issue.Location;
-            StatusLabel.Text = issue.WorkStatus.ToString();
+            DescriptionDisplay.Text = issue.Description;
+            LocationDisplay.Text = issue.Location;
+            StatusDisplay.Text = issue.WorkStatus.ToString();
             PictureBox1.Image = issue.GetImage;
         }
 

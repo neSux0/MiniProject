@@ -30,8 +30,13 @@ namespace CommunityAppMiniProjectWinForms.Data
         }
         public static bool ContainsUser(string username)
         {
-            if (usersByUsername.ContainsKey(username)) return true;
-            return false;
+            return usersByUsername.ContainsKey(username);
+
+        }
+        public static bool VerifyUser(string username, string password)
+        {
+            if (!ContainsUser(username)) return false;
+            return usersByUsername[username].Password == password;
         }
 
 
