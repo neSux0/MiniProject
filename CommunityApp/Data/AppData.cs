@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+using CommunityAppMiniProjectWinForms.Classes;
+
 namespace CommunityAppMiniProjectWinForms.Data
 {
     //make static so dont need to create an object of this class. use class directly for orgnaization.
