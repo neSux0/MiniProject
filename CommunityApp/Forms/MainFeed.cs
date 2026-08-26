@@ -12,6 +12,8 @@ namespace CommunityAppMiniProjectWinForms.Forms
 {
     public partial class MainFeed : Form
     {
+        // AppData is static, so its data remains in memory while the program is running.
+        // MainFeed simply reads that data again whenever it loads.
         public MainFeed()
         {
             InitializeComponent();
