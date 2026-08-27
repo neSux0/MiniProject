@@ -11,22 +11,23 @@ public class Issue
 	private DateTime _CreatedAt { get; set; }
 	private string _severity { get; set; }
 	private IssueStatus _WorkStatus { get; set; }
-	private string _UserReported { get; set; } //User that created the issue. Stores their id. 
+	private User _UserReported { get; set; } //User that created the issue. Stores their id. 
 	private HashSet<string> _ConfirmVotes { get; set; } //the number of users that agrees of the ongoing issue.
 	private int _NumofCompleteVotes { get; set; } //the number of users who agree that the work order is completed.
 
-    public Issue(string description, string location, Image? image)
+    public Issue(string description, string location, Image? image, User CreatedByUser)
     {
 		//From user.
 		_description = description;
 		_location = location;
 		_Image = image;
-		//default
+
         _WorkStatus = IssueStatus.Submitted;
 		_NumofCompleteVotes = 0;
 		_CreatedAt = DateTime.Now;
 		_IssueID = nextIssueId++;
 		_ConfirmVotes = new();
+		_UserReported = CreatedByUser;
 		
     }
 
@@ -79,5 +80,10 @@ public class Issue
 	public HashSet<string> UserLiked
 	{
 		get { return _ConfirmVotes; }
+	}
+
+	public User GetCreatedByUser
+	{
+		get { return _UserReported; }
 	}
 }

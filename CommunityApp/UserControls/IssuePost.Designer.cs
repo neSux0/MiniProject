@@ -39,6 +39,9 @@
             LocationDisplay = new Label();
             CreateIssuetimeLabel = new Label();
             CreateIssueTimeDisplay = new Label();
+            RemovePostBtn = new Button();
+            SubmittedByLabel = new Label();
+            SubmittedByDisplay = new Label();
             ((System.ComponentModel.ISupportInitialize)PictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -155,11 +158,48 @@
             CreateIssueTimeDisplay.TabIndex = 16;
             CreateIssueTimeDisplay.Text = "-";
             // 
+            // RemovePostBtn
+            // 
+            RemovePostBtn.FlatAppearance.BorderSize = 0;
+            RemovePostBtn.FlatStyle = FlatStyle.Flat;
+            RemovePostBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            RemovePostBtn.ForeColor = Color.Firebrick;
+            RemovePostBtn.Location = new Point(590, 0);
+            RemovePostBtn.Name = "RemovePostBtn";
+            RemovePostBtn.Size = new Size(35, 29);
+            RemovePostBtn.TabIndex = 17;
+            RemovePostBtn.Text = "X";
+            RemovePostBtn.UseVisualStyleBackColor = true;
+            RemovePostBtn.Click += RemovePostBtn_Click;
+            // 
+            // SubmittedByLabel
+            // 
+            SubmittedByLabel.AutoSize = true;
+            SubmittedByLabel.Font = new Font("Segoe UI", 6F);
+            SubmittedByLabel.Location = new Point(444, 398);
+            SubmittedByLabel.Name = "SubmittedByLabel";
+            SubmittedByLabel.Size = new Size(81, 15);
+            SubmittedByLabel.TabIndex = 18;
+            SubmittedByLabel.Text = "Submitted By:";
+            // 
+            // SubmittedByDisplay
+            // 
+            SubmittedByDisplay.AutoSize = true;
+            SubmittedByDisplay.Font = new Font("Segoe UI", 7F);
+            SubmittedByDisplay.Location = new Point(531, 394);
+            SubmittedByDisplay.Name = "SubmittedByDisplay";
+            SubmittedByDisplay.Size = new Size(15, 19);
+            SubmittedByDisplay.TabIndex = 19;
+            SubmittedByDisplay.Text = "-";
+            // 
             // IssuePost
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
+            Controls.Add(SubmittedByDisplay);
+            Controls.Add(SubmittedByLabel);
+            Controls.Add(RemovePostBtn);
             Controls.Add(CreateIssueTimeDisplay);
             Controls.Add(CreateIssuetimeLabel);
             Controls.Add(LocationDisplay);
@@ -173,7 +213,7 @@
             Controls.Add(PictureBox1);
             Font = new Font("Segoe UI", 9F);
             Name = "IssuePost";
-            Size = new Size(625, 425);
+            Size = new Size(628, 420);
             ((System.ComponentModel.ISupportInitialize)PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -193,5 +233,8 @@
         private Label LocationDisplay;
         private Label CreateIssuetimeLabel;
         private Label CreateIssueTimeDisplay;
+        private Button RemovePostBtn;
+        private Label SubmittedByLabel;
+        private Label SubmittedByDisplay;
     }
 }

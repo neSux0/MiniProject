@@ -27,7 +27,7 @@ namespace CommunityAppMiniProjectWinForms.Forms
             }
             else
             {
-                Issue NewIssue = new Issue(IssueDescriptionTextbox.Text, CreateIssueLocationTextbox.Text, selectedImage);
+                Issue NewIssue = new Issue(IssueDescriptionTextbox.Text, CreateIssueLocationTextbox.Text, selectedImage, AppData.GetCurrentUser);
                 AppData.AddIssue(NewIssue);
                 MessageBox.Show("Issue has been posted.");
                 this.Close(); //closes the create issue form after posting.

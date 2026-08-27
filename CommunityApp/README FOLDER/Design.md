@@ -6,7 +6,7 @@
 3. Logging in should close this form and open main feed form.
 ### Form 2: The main feed form.
 1. A basic design with "ISSUES" text on top.
-2. A counter with number of users that agrees (including poster).
+2. A counter with number of users that agrees.
 3. A feed containing issues submitted by users with timestamp.
 4. A status bar: Pending/Verfied.
 5. A log off button.

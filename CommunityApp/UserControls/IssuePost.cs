@@ -17,6 +17,7 @@ namespace CommunityAppMiniProjectWinForms.Forms
         public IssuePost(Issue issue)
         {
             CurrIssue = issue;
+          
             InitializeComponent();
 
             //assigns the data from the CURRENT issue to a control post.
@@ -26,19 +27,37 @@ namespace CommunityAppMiniProjectWinForms.Forms
             CreateIssueTimeDisplay.Text = CurrIssue.CreatedAt.ToString();
             PictureBox1.Image = CurrIssue.GetImage;
             VoteCountDisplay.Text = CurrIssue.GetConfirmVoteCount.ToString();
+            SubmittedByDisplay.Text = CurrIssue.GetCreatedByUser.Username;
+
+            if (CurrIssue.GetCreatedByUser.UserId == AppData.GetCurrentUser.UserId)
+            {
+                RemovePostBtn.Show();
+            }
+            else
+            {
+                //if they are not the user that created
+                RemovePostBtn.Hide();
+            }
         }
 
         private void AgreeBtn_Click(object sender, EventArgs e)
         {
-            if(!CurrIssue.UserLiked.Contains(AppData.GetCurrentUser.Username))
+            if (!CurrIssue.UserLiked.Contains(AppData.GetCurrentUser.Username))
             {
                 CurrIssue.AddLikedUser(AppData.GetCurrentUser.Username);
             }
-            else if(CurrIssue.UserLiked.Contains(AppData.GetCurrentUser.Username))
+            else if (CurrIssue.UserLiked.Contains(AppData.GetCurrentUser.Username))
             {
                 CurrIssue.RemoveLikedUser(AppData.GetCurrentUser.Username);
             }
             VoteCountDisplay.Text = CurrIssue.GetConfirmVoteCount.ToString();
+        }
+
+        private void RemovePostBtn_Click(object sender, EventArgs e)
+        {
+            AppData.IssuesList.Remove(CurrIssue);
+            Parent.Controls.Remove(this);
+            Dispose();
         }
     }
 }
