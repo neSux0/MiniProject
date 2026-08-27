@@ -23,7 +23,7 @@ namespace CommunityAppMiniProjectWinForms.Forms
             //assigns the data from the CURRENT issue to a control post.
             DescriptionDisplay.Text = CurrIssue.Description;
             LocationDisplay.Text = CurrIssue.Location;
-            StatusDisplay.Text = CurrIssue.WorkStatus.ToString();
+            StatusDisplay.Text = GetStatusText(CurrIssue.WorkStatus);
             CreateIssueTimeDisplay.Text = CurrIssue.CreatedAt.ToString();
             PictureBox1.Image = CurrIssue.GetImage;
             VoteCountDisplay.Text = CurrIssue.GetConfirmVoteCount.ToString();
@@ -58,6 +58,17 @@ namespace CommunityAppMiniProjectWinForms.Forms
             AppData.IssuesList.Remove(CurrIssue);
             Parent.Controls.Remove(this);
             Dispose();
+        }
+
+        private string GetStatusText(IssueStatus status)
+        {
+            return status switch
+            {
+                IssueStatus.Submitted => "Submitted",
+                IssueStatus.InProgress => "In Progress",
+                IssueStatus.Completed => "Completed",
+                _ => "Status not found." //default case.
+            };
         }
     }
 }
