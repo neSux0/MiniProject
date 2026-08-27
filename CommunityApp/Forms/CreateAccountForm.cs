@@ -73,12 +73,12 @@ namespace CommunityApp
             string username = UserNameTextBox2.Text;
             string password = PasswordTextbox2.Text;
             ///EDGE CASES for user creation.
-            if(username == "")
+            if (username == "")
             {
                 MessageBox.Show("Username cannot be empty.");
                 return;
             }
-            if(password.Length < 8)
+            if (password.Length < 8)
             {
                 MessageBox.Show("Password must be greater have 8 charachters or more.");
                 return;
@@ -103,5 +103,6 @@ namespace CommunityApp
                 MessageBox.Show($"Your account \"{username}\" has been created. Please log in.");
             }
         }
+
     }
 }

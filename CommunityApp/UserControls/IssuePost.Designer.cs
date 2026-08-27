@@ -42,6 +42,8 @@
             RemovePostBtn = new Button();
             SubmittedByLabel = new Label();
             SubmittedByDisplay = new Label();
+            DepartmentAcceptIssueBtn = new Button();
+            DepartmentCompleteBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)PictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -192,11 +194,35 @@
             SubmittedByDisplay.TabIndex = 19;
             SubmittedByDisplay.Text = "-";
             // 
+            // DepartmentAcceptIssueBtn
+            // 
+            DepartmentAcceptIssueBtn.Font = new Font("Segoe UI", 7F);
+            DepartmentAcceptIssueBtn.Location = new Point(392, 267);
+            DepartmentAcceptIssueBtn.Name = "DepartmentAcceptIssueBtn";
+            DepartmentAcceptIssueBtn.Size = new Size(70, 30);
+            DepartmentAcceptIssueBtn.TabIndex = 20;
+            DepartmentAcceptIssueBtn.Text = "Accept";
+            DepartmentAcceptIssueBtn.UseVisualStyleBackColor = true;
+            DepartmentAcceptIssueBtn.Click += DepartmentAcceptIssueBtn_Click;
+            // 
+            // DepartmentCompleteBtn
+            // 
+            DepartmentCompleteBtn.Font = new Font("Segoe UI", 6F);
+            DepartmentCompleteBtn.Location = new Point(476, 268);
+            DepartmentCompleteBtn.Name = "DepartmentCompleteBtn";
+            DepartmentCompleteBtn.Size = new Size(70, 30);
+            DepartmentCompleteBtn.TabIndex = 21;
+            DepartmentCompleteBtn.Text = "Complete";
+            DepartmentCompleteBtn.UseVisualStyleBackColor = true;
+            DepartmentCompleteBtn.Click += DepartmentCompleteBtn_Click;
+            // 
             // IssuePost
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
+            Controls.Add(DepartmentCompleteBtn);
+            Controls.Add(DepartmentAcceptIssueBtn);
             Controls.Add(SubmittedByDisplay);
             Controls.Add(SubmittedByLabel);
             Controls.Add(RemovePostBtn);
@@ -236,5 +262,7 @@
         private Button RemovePostBtn;
         private Label SubmittedByLabel;
         private Label SubmittedByDisplay;
+        private Button DepartmentAcceptIssueBtn;
+        private Button DepartmentCompleteBtn;
     }
 }

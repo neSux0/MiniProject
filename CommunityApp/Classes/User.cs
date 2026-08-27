@@ -32,4 +32,9 @@ public class User
 	{
 		get { return _password; }
 	}
+
+	public bool IsDep
+	{
+		get { return _IsDepartment; }
+	}
 }

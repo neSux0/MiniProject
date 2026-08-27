@@ -43,7 +43,7 @@ public class Issue
 		_ConfirmVotes.Remove(user);
 	}
 
-    //====================ACCESSORS========================//
+    //====================PUBLIC PROPERTIES ACCESSORS========================//
     public string Description
 	{
 		get { return _description; }
@@ -86,4 +86,10 @@ public class Issue
 	{
 		get { return _UserReported; }
 	}
+
+    //=============HELPER FUNCTIONS===================//
+    public void ChangeWorkStatus(IssueStatus NewStatus)
+    {
+		_WorkStatus = NewStatus;
+    }
 }

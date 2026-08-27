@@ -17,9 +17,24 @@ namespace CommunityAppMiniProjectWinForms.Forms
         public IssuePost(Issue issue)
         {
             CurrIssue = issue;
-          
-            InitializeComponent();
 
+            InitializeComponent();
+            DepartmentAcceptIssueBtn.Hide();
+            DepartmentCompleteBtn.Hide();
+            if (AppData.GetCurrentUser is DepartmentUser)
+            {
+                AgreeBtn.Enabled = false; //prevents department user from liking.
+                DepartmentAcceptIssueBtn.Show();
+                DepartmentCompleteBtn.Show();
+                if (CurrIssue.WorkStatus == IssueStatus.InProgress)
+                {
+                    DepartmentAcceptIssueBtn.Enabled = false;
+                }
+                if(CurrIssue.WorkStatus == IssueStatus.WaitingUserApproval)
+                {
+                    DepartmentCompleteBtn.Enabled = false;
+                }
+            }
             //assigns the data from the CURRENT issue to a control post.
             DescriptionDisplay.Text = CurrIssue.Description;
             LocationDisplay.Text = CurrIssue.Location;
@@ -29,7 +44,10 @@ namespace CommunityAppMiniProjectWinForms.Forms
             VoteCountDisplay.Text = CurrIssue.GetConfirmVoteCount.ToString();
             SubmittedByDisplay.Text = CurrIssue.GetCreatedByUser.Username;
 
-            if (CurrIssue.GetCreatedByUser.UserId == AppData.GetCurrentUser.UserId)
+            //Only the user that submitted the post can remove it. Therefore, the
+            //remove button will only show for that user.
+            //It will also show for department users.
+            if (CurrIssue.GetCreatedByUser.UserId == AppData.GetCurrentUser.UserId || AppData.GetCurrentUser is DepartmentUser)
             {
                 RemovePostBtn.Show();
             }
@@ -65,10 +83,25 @@ namespace CommunityAppMiniProjectWinForms.Forms
             return status switch
             {
                 IssueStatus.Submitted => "Submitted",
-                IssueStatus.InProgress => "In Progress",
+                IssueStatus.InProgress => "In Progress...",
+                IssueStatus.WaitingUserApproval => "Waiting for users to confirm...",
                 IssueStatus.Completed => "Completed",
                 _ => "Status not found." //default case.
             };
+        }
+
+        private void DepartmentAcceptIssueBtn_Click(object sender, EventArgs e)
+        {
+            CurrIssue.ChangeWorkStatus(IssueStatus.InProgress);
+            StatusDisplay.Text = GetStatusText(CurrIssue.WorkStatus);
+            DepartmentAcceptIssueBtn.Enabled = false;
+        }
+
+        private void DepartmentCompleteBtn_Click(object sender, EventArgs e)
+        {
+            CurrIssue.ChangeWorkStatus(IssueStatus.WaitingUserApproval);
+            StatusDisplay.Text = GetStatusText(CurrIssue.WorkStatus);
+            DepartmentCompleteBtn.Enabled = false;
         }
     }
 }
