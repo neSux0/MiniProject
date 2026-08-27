@@ -13,8 +13,8 @@ public class Issue
 	private IssueStatus _WorkStatus { get; set; }
 	private User _UserReported { get; set; } //User that created the issue. Stores their id. 
 	private HashSet<string> _ConfirmVotes { get; set; } //the number of users that agrees of the ongoing issue.
-	private int _NumofCompleteVotes { get; set; } //the number of users who agree that the work order is completed.
-
+	private HashSet<User> _CompleteVotes { get; set; } //the number of users who agree that the work order is completed.
+	private int _VotesNeeded { get; set; }
     public Issue(string description, string location, Image? image, User CreatedByUser)
     {
 		//From user.
@@ -23,10 +23,11 @@ public class Issue
 		_Image = image;
 
         _WorkStatus = IssueStatus.Submitted;
-		_NumofCompleteVotes = 0;
 		_CreatedAt = DateTime.Now;
 		_IssueID = nextIssueId++;
 		_ConfirmVotes = new();
+		_CompleteVotes = new();
+		_VotesNeeded = 2; //hard coded. 2 votes are needed to complete post.
 		_UserReported = CreatedByUser;
 		
     }
@@ -42,6 +43,12 @@ public class Issue
 	{
 		_ConfirmVotes.Remove(user);
 	}
+
+    public void AddUserCompleted(User user)
+    {
+        _CompleteVotes.Add(user);
+    }
+
 
     //====================PUBLIC PROPERTIES ACCESSORS========================//
     public string Description
@@ -63,6 +70,10 @@ public class Issue
 		get { return _ConfirmVotes.Count; }
 	}
 
+	public int GetCompleteVoteCount
+	{
+		get { return _CompleteVotes.Count; }
+	}
 	public DateTime CreatedAt
 	{
 		get {return _CreatedAt; }
@@ -85,6 +96,10 @@ public class Issue
 	public User GetCreatedByUser
 	{
 		get { return _UserReported; }
+	}
+	public int GetVoteNeededToComplete
+	{
+		get { return _VotesNeeded; }
 	}
 
     //=============HELPER FUNCTIONS===================//

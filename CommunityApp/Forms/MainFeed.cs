@@ -21,7 +21,6 @@ namespace CommunityAppMiniProjectWinForms.Forms
             {
                 AddIssueBtn.Enabled = false; //prevents department user from liking.
                 MainFeedTitleLabel.Text = $"Welcome, {AppData.GetCurrentUser.Username}!"; 
-
             }
             LoadIssues();
         }

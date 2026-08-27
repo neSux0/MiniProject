@@ -44,6 +44,7 @@
             SubmittedByDisplay = new Label();
             DepartmentAcceptIssueBtn = new Button();
             DepartmentCompleteBtn = new Button();
+            UserConfirmCompleteBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)PictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -197,7 +198,7 @@
             // DepartmentAcceptIssueBtn
             // 
             DepartmentAcceptIssueBtn.Font = new Font("Segoe UI", 7F);
-            DepartmentAcceptIssueBtn.Location = new Point(392, 267);
+            DepartmentAcceptIssueBtn.Location = new Point(411, 268);
             DepartmentAcceptIssueBtn.Name = "DepartmentAcceptIssueBtn";
             DepartmentAcceptIssueBtn.Size = new Size(70, 30);
             DepartmentAcceptIssueBtn.TabIndex = 20;
@@ -208,7 +209,7 @@
             // DepartmentCompleteBtn
             // 
             DepartmentCompleteBtn.Font = new Font("Segoe UI", 6F);
-            DepartmentCompleteBtn.Location = new Point(476, 268);
+            DepartmentCompleteBtn.Location = new Point(502, 268);
             DepartmentCompleteBtn.Name = "DepartmentCompleteBtn";
             DepartmentCompleteBtn.Size = new Size(70, 30);
             DepartmentCompleteBtn.TabIndex = 21;
@@ -216,11 +217,22 @@
             DepartmentCompleteBtn.UseVisualStyleBackColor = true;
             DepartmentCompleteBtn.Click += DepartmentCompleteBtn_Click;
             // 
+            // UserConfirmCompleteBtn
+            // 
+            UserConfirmCompleteBtn.Location = new Point(333, 255);
+            UserConfirmCompleteBtn.Name = "UserConfirmCompleteBtn";
+            UserConfirmCompleteBtn.Size = new Size(202, 33);
+            UserConfirmCompleteBtn.TabIndex = 22;
+            UserConfirmCompleteBtn.Text = "Confirm Complete";
+            UserConfirmCompleteBtn.UseVisualStyleBackColor = true;
+            UserConfirmCompleteBtn.Click += UserConfirmCompleteBtn_Click;
+            // 
             // IssuePost
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
+            Controls.Add(UserConfirmCompleteBtn);
             Controls.Add(DepartmentCompleteBtn);
             Controls.Add(DepartmentAcceptIssueBtn);
             Controls.Add(SubmittedByDisplay);
@@ -264,5 +276,6 @@
         private Label SubmittedByDisplay;
         private Button DepartmentAcceptIssueBtn;
         private Button DepartmentCompleteBtn;
+        private Button UserConfirmCompleteBtn;
     }
 }

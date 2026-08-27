@@ -21,6 +21,7 @@ namespace CommunityAppMiniProjectWinForms.Forms
             InitializeComponent();
             DepartmentAcceptIssueBtn.Hide();
             DepartmentCompleteBtn.Hide();
+            UserConfirmCompleteBtn.Hide();
             if (AppData.GetCurrentUser is DepartmentUser)
             {
                 AgreeBtn.Enabled = false; //prevents department user from liking.
@@ -30,10 +31,15 @@ namespace CommunityAppMiniProjectWinForms.Forms
                 {
                     DepartmentAcceptIssueBtn.Enabled = false;
                 }
-                if(CurrIssue.WorkStatus == IssueStatus.WaitingUserApproval)
+                if (CurrIssue.WorkStatus == IssueStatus.WaitingUserApproval)
                 {
                     DepartmentCompleteBtn.Enabled = false;
                 }
+            }
+            if(AppData.GetCurrentUser is PublicUser && CurrIssue.WorkStatus == IssueStatus.WaitingUserApproval)
+            {
+                UserConfirmCompleteBtn.Show();
+
             }
             //assigns the data from the CURRENT issue to a control post.
             DescriptionDisplay.Text = CurrIssue.Description;
@@ -84,7 +90,7 @@ namespace CommunityAppMiniProjectWinForms.Forms
             {
                 IssueStatus.Submitted => "Submitted",
                 IssueStatus.InProgress => "In Progress...",
-                IssueStatus.WaitingUserApproval => "Waiting for users to confirm...",
+                IssueStatus.WaitingUserApproval => $"Waiting for {CurrIssue.GetCompleteVoteCount}/{CurrIssue.GetVoteNeededToComplete} users to confirm...",
                 IssueStatus.Completed => "Completed",
                 _ => "Status not found." //default case.
             };
@@ -102,6 +108,17 @@ namespace CommunityAppMiniProjectWinForms.Forms
             CurrIssue.ChangeWorkStatus(IssueStatus.WaitingUserApproval);
             StatusDisplay.Text = GetStatusText(CurrIssue.WorkStatus);
             DepartmentCompleteBtn.Enabled = false;
+        }
+
+        private void UserConfirmCompleteBtn_Click(object sender, EventArgs e)
+        {
+            if(CurrIssue.GetVoteNeededToComplete == CurrIssue.GetCompleteVoteCount)
+            {
+                CurrIssue.ChangeWorkStatus(IssueStatus.Completed);
+            }
+            CurrIssue.AddUserCompleted(AppData.GetCurrentUser);
+            StatusDisplay.Text = GetStatusText(CurrIssue.WorkStatus);
+            UserConfirmCompleteBtn.Enabled = false;
         }
     }
 }
