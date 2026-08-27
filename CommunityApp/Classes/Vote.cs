@@ -1,9 +1,5 @@
 ﻿using System;
 
-public class Vote
+internal static class Vote
 {
-	public Vote()
-	{
-
-	}
 }

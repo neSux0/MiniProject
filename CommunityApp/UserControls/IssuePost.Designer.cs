@@ -97,6 +97,7 @@
             AgreeBtn.TabIndex = 6;
             AgreeBtn.Text = "👍";
             AgreeBtn.UseVisualStyleBackColor = false;
+            AgreeBtn.Click += AgreeBtn_Click;
             // 
             // StatusDisplay
             // 

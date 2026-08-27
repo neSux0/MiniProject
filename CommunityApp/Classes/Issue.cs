@@ -12,7 +12,7 @@ public class Issue
 	private string _severity { get; set; }
 	private IssueStatus _WorkStatus { get; set; }
 	private string _UserReported { get; set; } //User that created the issue. Stores their id. 
-	private int _NumofConfirmVotes { get; set; } //the number of users that agrees of the ongoing issue.
+	private HashSet<string> _ConfirmVotes { get; set; } //the number of users that agrees of the ongoing issue.
 	private int _NumofCompleteVotes { get; set; } //the number of users who agree that the work order is completed.
 
     public Issue(string description, string location, Image? image)
@@ -23,15 +23,27 @@ public class Issue
 		_Image = image;
 		//default
         _WorkStatus = IssueStatus.Submitted;
-		_NumofConfirmVotes = 0;
 		_NumofCompleteVotes = 0;
 		_CreatedAt = DateTime.Now;
-		_IssueID = _IssueID++;
+		_IssueID = nextIssueId++;
+		_ConfirmVotes = new();
 		
     }
 
-	//====================ACCESSORS========================
-	public string Description
+    //==============MODIFIERS============================//
+	//Both the Add/Remove like ID is used for the "like" button.
+    public void AddLikedUser(string user)
+	{
+		_ConfirmVotes.Add(user);
+	}
+
+	public void RemoveLikedUser(string user)
+	{
+		_ConfirmVotes.Remove(user);
+	}
+
+    //====================ACCESSORS========================//
+    public string Description
 	{
 		get { return _description; }
 	}
@@ -45,9 +57,9 @@ public class Issue
         get { return _WorkStatus; }
     }
 
-	public int ConfirmVotes
+	public int GetConfirmVoteCount
 	{
-		get { return _NumofConfirmVotes; }
+		get { return _ConfirmVotes.Count; }
 	}
 
 	public DateTime CreatedAt
@@ -58,5 +70,14 @@ public class Issue
 	public Image? GetImage
 	{
 		get { return _Image; }
+	}
+
+	public int GetID
+	{
+		get { return _IssueID; }
+	}
+	public HashSet<string> UserLiked
+	{
+		get { return _ConfirmVotes; }
 	}
 }

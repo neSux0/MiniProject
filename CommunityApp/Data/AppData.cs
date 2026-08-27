@@ -16,7 +16,9 @@ namespace CommunityAppMiniProjectWinForms.Data
         private static Dictionary<string, User> usersByUsername = new();
         private static Dictionary<int, User> usersById = new();
         //contains all the issues in a list. 
-        private static List<Issue> Issues { get; } = new(); 
+        private static List<Issue> Issues { get; } = new();
+
+        private static User? CurrentUser { get; set; } = null;
 
         public static void AddIssue(Issue issue)
         {
@@ -36,7 +38,11 @@ namespace CommunityAppMiniProjectWinForms.Data
         public static bool VerifyUser(string username, string password)
         {
             if (!ContainsUser(username)) return false;
-            return usersByUsername[username].Password == password;
+            //if it does contain username, but password is wrong. return false
+            if(usersByUsername[username].Password != password) return false;
+            //if pasword is correct. set currentuser to the User and return true.
+            CurrentUser = usersByUsername[username];
+            return true;
         }
 
 
@@ -44,6 +50,11 @@ namespace CommunityAppMiniProjectWinForms.Data
         public static List<Issue> IssuesList
         {
             get { return Issues; }
+        }
+
+        public static User? GetCurrentUser
+        {
+            get { return CurrentUser; }
         }
     }
 }
